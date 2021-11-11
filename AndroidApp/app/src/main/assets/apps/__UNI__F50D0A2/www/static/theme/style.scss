@@ -1,0 +1,34 @@
+
+
+/*
+ main主题
+*/
+/* #ifndef APP-PLUS-NVUE */
+[bg-theme = 'main'] {
+  background-color: #EA4A4A !important;
+}
+
+[text-theme = 'main'] {
+  color: #EA4A4A !important;
+}
+
+[border-theme = 'main'] {
+  border-color: #EA4A4A !important;
+}
+/* #endif */
+/*
+ 蓝色主题
+*/
+/* #ifndef APP-PLUS-NVUE */
+[bg-theme = 'blue'] {
+  background-color: #007aff !important;
+}
+
+[text-theme = 'blue'] {
+  color: #007aff !important;
+}
+
+[border-theme = 'blue'] {
+  border-color: #007aff !important;
+}
+/* #endif */
