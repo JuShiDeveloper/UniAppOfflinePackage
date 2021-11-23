@@ -1,0 +1,8 @@
+<!--debug包使用-->
+<!--<hbuilder debug="true" syncDebug="true">-->
+<!--release包使用-->
+<hbuilder >
+<apps>
+    <app appid="__UNI__F50D0A2" appver="3.8.7"/>
+</apps>
+</hbuilder>

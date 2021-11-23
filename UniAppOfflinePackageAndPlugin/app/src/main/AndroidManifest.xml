@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.gyibat.bridge.app">
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="dcloud_appkey"
+            android:value="3f1677d860ccfd21892f78c08564efa6" />
+
+        <activity
+            android:name="io.dcloud.PandoraEntry"
+            android:configChanges="orientation|keyboardHidden|keyboard|navigation"
+            android:hardwareAccelerated="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="user"
+            android:theme="@style/TranslucentTheme"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="io.dcloud.PandoraEntryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc|fontScale|keyboard|smallestScreenSize|screenLayout|screenSize"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTask"
+            android:permission="com.miui.securitycenter.permission.AppPermissionsEditor"
+            android:screenOrientation="user"
+            android:theme="@style/DCloudTheme"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <action android:name="android.intent.action.VIEW" />
+                <data android:scheme="h56131bcf" />
+            </intent-filter>
+            <!--            /*oppo配置开始*/-->
+            <intent-filter>
+                <action android:name="android.intent.action.oppopush" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!--            /*oppo配置结束*/-->
+        </activity>
+        <!--provider节点必须添加-->
+        <provider
+            android:name="io.dcloud.common.util.DCloud_FileProvider"
+            android:authorities="com.gyibat.bridge.app.dc.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/dcloud_file_provider" />
+        </provider>
+
+        <!--小米厂商配置——开始-->
+        <meta-data
+            android:name="MIPUSH_APPID"
+            android:value="2882303761519967800" />
+        <meta-data
+            android:name="MIPUSH_APPKEY"
+            android:value="5211996747800" />
+        <!--小米厂商配置——结束-->
+        <!--魅族厂商配置——开始-->
+        <meta-data
+            android:name="MEIZUPUSH_APPID"
+            android:value="142253" />
+        <meta-data
+            android:name="MEIZUPUSH_APPKEY"
+            android:value="1285b497c4c54894962569be87c27fe9" />
+        <!--魅族厂商配置——结束-->
+        <!--华为厂商配置——开始-->
+        <meta-data
+            android:name="com.huawei.hms.client.appid"
+            android:value="104457617" />
+        <!--华为厂商配置——结束-->
+        <!--OPPO厂商配置——开始-->
+        <meta-data
+            android:name="OPPOPUSH_APPKEY"
+            android:value="bb3717e8fab74159a25cb803d407cdc7" />
+        <meta-data
+            android:name="OPPOPUSH_APPSECRET"
+            android:value="a7d7153a468243ca8099c2327b70dae7" />
+        <!--OPPO厂商配置——结束-->
+        <!--VIVO厂商配置——开始-->
+        <meta-data
+            android:name="com.vivo.push.app_id"
+            android:value="105491665" />
+        <meta-data
+            android:name="com.vivo.push.api_key"
+            android:value="9186acd9e1affaa30237bf0cc5069494" />
+        <!--VIVO厂商配置——结束-->
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="26269b8697220c47453390c6358b4c70"></meta-data>
+        <service android:name="com.amap.api.location.APSService"></service>
+
+    </application>
+
+</manifest>

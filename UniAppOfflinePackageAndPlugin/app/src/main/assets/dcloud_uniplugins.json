@@ -1,0 +1,13 @@
+{
+  "nativePlugins": [
+    {
+      "plugins": [
+        {
+          "type": "module",
+          "name": "jushi-FilePreview",
+          "class": "com.dcloud.uniplugin.OpenFileModule"
+        }
+      ]
+    }
+  ]
+}
